@@ -1,5 +1,7 @@
 package com.thedeveloperworldisyours.touchlin.touch;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
@@ -9,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,13 +30,11 @@ public class RePositionFragment extends Fragment implements RePositionContract.V
     @BindView(R.id.fc_re_position_imageView)
     ImageView fridgeImagePreview;
 
-    @BindView(R.id.fc_re_position_textView)
-    TextView textView;
-
     @BindView(R.id.fc_re_position_button)
     Button button;
 
     RePositionContract.Presenter presenter;
+    PlotBackgroundPaint plotBackgroundPaint;
 
     public static RePositionFragment newInstance() {
         RePositionFragment rePositionFragment = new RePositionFragment();
@@ -60,6 +60,7 @@ public class RePositionFragment extends Fragment implements RePositionContract.V
 
     @Override
     public void setupView() {
+        plotBackgroundPaint = new PlotBackgroundPaint(getActivity());
         presenter.load();
         fridgeImagePreview.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -77,8 +78,14 @@ public class RePositionFragment extends Fragment implements RePositionContract.V
     }
 
     @Override
-    public void setProductTitle(String title) {
-        textView.setText(title);
+    public void showAnnotation(int centerX, int screenWidth, int centerY, int screenHeight) {
+        Bitmap bitty = Bitmap.createBitmap(screenWidth, screenHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitty);
+        canvas.drawCircle(centerX, centerY, 50, plotBackgroundPaint);
+
+        ImageView imgV = new ImageView(getActivity());
+        imgV.setImageBitmap(bitty);
+        constraintLayout.addView(imgV);
     }
 
     @Override

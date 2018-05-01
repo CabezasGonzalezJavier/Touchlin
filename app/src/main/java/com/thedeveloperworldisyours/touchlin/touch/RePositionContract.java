@@ -14,22 +14,20 @@ public interface RePositionContract {
 
         void load();
 
-        void showProducts(int position);
-
         void addPosition(int x, int y);
-
-        PointF calculatePosition(int x, int y);
 
         void send();
 
         void finishActivity();
+
+        void getScreen();
     }
 
     interface View extends BaseView<Presenter> {
 
         void setupView();
 
-        void setProductTitle(String title);
+        void showAnnotation(int centerX, int screenWidth, int centerY, int screenHeight);
 
         void showFinalButton();
 
