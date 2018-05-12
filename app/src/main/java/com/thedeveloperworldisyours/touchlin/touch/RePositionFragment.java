@@ -34,7 +34,7 @@ public class RePositionFragment extends Fragment implements RePositionContract.V
     Button button;
 
     RePositionContract.Presenter presenter;
-    PlotBackgroundPaint plotBackgroundPaint;
+    PlotBackground plotBackgroundPaint;
 
     public static RePositionFragment newInstance() {
         RePositionFragment rePositionFragment = new RePositionFragment();
@@ -60,7 +60,7 @@ public class RePositionFragment extends Fragment implements RePositionContract.V
 
     @Override
     public void setupView() {
-        plotBackgroundPaint = new PlotBackgroundPaint(getActivity());
+        plotBackgroundPaint = new PlotBackground(getActivity());
         presenter.load();
         fridgeImagePreview.setOnTouchListener(new View.OnTouchListener() {
             @Override
