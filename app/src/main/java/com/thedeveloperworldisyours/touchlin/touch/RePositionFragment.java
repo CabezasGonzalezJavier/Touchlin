@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,13 +23,13 @@ import com.thedeveloperworldisyours.touchlin.R;
 
 public class RePositionFragment extends Fragment implements RePositionContract.View {
 
-    @BindView(R.id.fc_re_position_constraintLayout)
+    @BindView(R.id.touch_fragment_constraintLayout)
     ConstraintLayout constraintLayout;
 
-    @BindView(R.id.fc_re_position_imageView)
+    @BindView(R.id.touch_fragment_imageView)
     ImageView fridgeImagePreview;
 
-    @BindView(R.id.fc_re_position_button)
+    @BindView(R.id.touch_fragment_button)
     Button button;
 
     RePositionContract.Presenter presenter;
@@ -47,7 +46,7 @@ public class RePositionFragment extends Fragment implements RePositionContract.V
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fc_re_position_fragment, container, false);
+        View view = inflater.inflate(R.layout.touch_fragment, container, false);
         ButterKnife.bind(this, view);
         setupView();
         return view;
@@ -94,7 +93,7 @@ public class RePositionFragment extends Fragment implements RePositionContract.V
 
     }
 
-    @OnClick(R.id.fc_re_position_button)
+    @OnClick(R.id.touch_fragment_button)
     public void sendPositions() {
         presenter.send();
     }

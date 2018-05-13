@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-            android:name=".touch.RePositionActivity"
+            android:name=".touch.TouchActivity"
             android:screenOrientation="portrait" />
     </application>
 

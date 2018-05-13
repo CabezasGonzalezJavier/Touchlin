@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/fc_re_position_constraintLayout"
+    android:id="@+id/touch_fragment_constraintLayout"
     android:background="@color/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/fc_re_position_imageView"
+        android:id="@+id/touch_fragment_imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/fc_re_position_button"
+        android:id="@+id/touch_fragment_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -25,7 +25,7 @@
         android:layout_marginStart="8dp"
         android:text="send"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/fc_re_position_imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/touch_fragment_imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
