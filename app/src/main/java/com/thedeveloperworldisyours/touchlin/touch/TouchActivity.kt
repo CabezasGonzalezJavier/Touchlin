@@ -19,10 +19,10 @@ class TouchActivity : AppCompatActivity() {
 
     private fun initFragment() {
 
-        var rePositionFragment: RePositionFragment = supportFragmentManager
-                .findFragmentById(R.id.touch_activity_container) as RePositionFragment
+        var rePositionFragment: TouchFragment = supportFragmentManager
+                .findFragmentById(R.id.touch_activity_container) as TouchFragment
         if (rePositionFragment == null) {
-            rePositionFragment = rePositionFragment
+            rePositionFragment = TouchFragment.newInstance()
             addFragmentToActivity(supportFragmentManager, rePositionFragment, R.id.touch_activity_container)
         }
         RePositionPresenter(rePositionFragment, this)
