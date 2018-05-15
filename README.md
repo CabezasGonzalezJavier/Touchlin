@@ -4,6 +4,7 @@
 </p>
 
 This is a example that java and kotlin can work together in the same app.
+Another way to use * BluePrintArchitecture - <https://github.com/googlesamples/android-architecture>
 
 Developed By
 ------------
